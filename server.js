@@ -5,13 +5,13 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var path = require("path");
 
-// Requiring Note and Article models
-var Note = require("./models/Note");
-var Article = require("./models/Article.js");
-
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
+
+// Requiring Note and Article models
+var Note = require("./models/Note.js");
+var Article = require("./models/Article.js");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
