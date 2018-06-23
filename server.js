@@ -41,10 +41,11 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9");
-//mongoose.connect("mongodb://localhost/mongoscraper");
+//mongoose.connect("");
+//mongodb://heroku_5k79nxr1:<dbpassword>@ds163330.mlab.com:63330/heroku_5k79nxr1
+mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
 var db = mongoose.connection;
-
+//   mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9
 // Show any mongoose errors
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
