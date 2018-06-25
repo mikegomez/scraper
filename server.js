@@ -6,13 +6,12 @@ var mongoose = require("mongoose");
 var path = require("path");
 
 // Requiring Note and Article models
-//var Article = require("./models/Article.js");
-//var Note = require("./models/Note.js");
+var Note = require("./models/Note.js");
+var Article = require("./models/Article.js");
 
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
-
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -42,8 +41,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-
 mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
+//mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -254,3 +253,4 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
 app.listen(port, function() {
   console.log("App running on port " + port);
 });
+
