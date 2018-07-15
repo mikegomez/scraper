@@ -1,3 +1,6 @@
+//var Note = require("Note");
+var Article = require("./Article");
+
 // Require mongoose
 var mongoose = require("mongoose");
 // Create a schema class
