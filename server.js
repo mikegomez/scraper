@@ -5,9 +5,10 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var path = require("path");
+//favicon = require('serve-favicon');
 
 // Requiring Note and Article models
-// var Note = require("./models/Note");
+var Note = require("./models/Note");
  var Article = require("./models/Article");
 
 
