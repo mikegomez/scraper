@@ -4,6 +4,7 @@
   "description": "Mongo NYT Scraper app",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
