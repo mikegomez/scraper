@@ -1,5 +1,3 @@
-var Note = require("./models/Note");
-var Article = require("./models/Article");
 
 // Dependencies
 var express = require("express");
@@ -9,6 +7,8 @@ var mongoose = require("mongoose");
 var path = require("path");
 
 // Requiring Note and Article models
+// var Note = require("./models/Note");
+ var Article = require("./models/Article");
 
 
 // Scraping tools
@@ -43,8 +43,8 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
-//mongoose.connect("mongodb://localhost/mongoscraper");
+//mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
+mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
