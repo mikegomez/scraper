@@ -4,12 +4,14 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 var path = require("path");
 //favicon = require('serve-favicon');
 
 // Requiring Note and Article models
-var Note = require("./models/Note");
- var Article = require("./models/Article");
+var Note = require("./models/Note.js");
+var Article = require("./models/Article.js");
 
 
 // Scraping tools
@@ -19,11 +21,14 @@ var cheerio = require("cheerio");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
-//Define port
-var port = process.env.PORT || 3000
 
 // Initialize Express
 var app = express();
+
+//Define port
+var port = process.env.PORT || 3000
+
+
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
@@ -34,8 +39,7 @@ app.use(bodyParser.urlencoded({
 // Make public a static dir
 app.use(express.static("public"));
 
-// Set Handlebars.
-var exphbs = require("express-handlebars");
+
 
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
