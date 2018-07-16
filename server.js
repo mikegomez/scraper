@@ -25,9 +25,6 @@ mongoose.Promise = Promise;
 // Initialize Express
 var app = express();
 
-//Define port
-var port = process.env.PORT || 3000
-
 
 
 // Use morgan and body parser with our app
@@ -41,23 +38,35 @@ app.use(express.static("public"));
 
 
 
-app.engine("handlebars", exphbs({
-    defaultLayout: "main",
-    partialsDir: path.join(__dirname, "/views/layouts/partials")
-}));
-app.set("view engine", "handlebars");
+
 
 // Database configuration with mongoose
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
-mongoose.Promise = Promise;
+// // Set mongoose to leverage built in JavaScript ES6 Promises
+// // Connect to the Mongo DB
+// //mongoose.Promise = Promise;
 
-//mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
-mongoose.connect("mongodb://localhost/mongoscraper");
+// //mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
+ mongoose.connect("mongodb://localhost/mongoscraper");
+
+
+// var MONGODB_URI = "mongodb://localhost/mongoosearticles";
+
+// if (process.env.MONGODB_URI) {
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
+// }
+
 var db = mongoose.connection;
+
+app.engine("handlebars", exphbs({
+  defaultLayout: "main",
+  partialsDir: path.join(__dirname, "/views/layouts/partials")
+}));
+app.set("view engine", "handlebars");
 
 // Show any mongoose errors
 db.on("error", function(error) {
@@ -262,6 +271,11 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
     }
   });
 });
+
+//Define port
+var port = process.env.PORT || 3000
+
+
 
 // Listen on port
 app.listen(port, function() {
