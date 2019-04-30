@@ -1,6 +1,7 @@
 body {
  
     padding-top: 70px;
+    background-image: "./../images/nyt.png"
 }
 
 .deleteNote {
@@ -14,4 +15,8 @@ body {
 
 #scrape {
     margin: 8px 0px;
+}
+
+.container {
+       background-image: "./../images/nyt.png"
 }
