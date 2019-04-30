@@ -46,22 +46,22 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 
 // // Set mongoose to leverage built in JavaScript ES6 Promises
 // // Connect to the Mongo DB
-mongoose.Promise = Promise;
+//mongoose.Promise = Promise;
 
-// mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
-mongoose.connect("mongodb://heroku_nmwplj0s:1hgeqj9k4hlgmtg6ellkb63dl@ds137631.mlab.com:37631/heroku_nmwplj0s");
-//  mongoose.connect("mongodb://localhost/mongoscraper");
+//mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
+//mongoose.connect("mongodb://heroku_nmwplj0s:1hgeqj9k4hlgmtg6ellkb63dl@ds137631.mlab.com:37631/heroku_nmwplj0s");
+mongoose.connect("mongodb://localhost/mongoscraper");
 
-
+//
 var MONGODB_URI = "mongodb://localhost/mongoosearticles";
 
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  // mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
-  mongoose.connect("mongodb://heroku_nmwplj0s:1hgeqj9k4hlgmtg6ellkb63dl@ds137631.mlab.com:37631/heroku_nmwplj0s");
+// if (process.env.MONGODB_URI) {
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   // mongoose.connect("mongodb://heroku_5k79nxr1:dmfc15i9s30ulouri337481tol@ds163330.mlab.com:63330/heroku_5k79nxr1");
+//   mongoose.connect("mongodb://heroku_nmwplj0s:1hgeqj9k4hlgmtg6ellkb63dl@ds137631.mlab.com:37631/heroku_nmwplj0s");
 
-}
+// }
 
 var db = mongoose.connection;
 
